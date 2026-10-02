@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steve’s Apple — iPhone и техника Apple в Батайске</title>
+<meta name="description" content="Магазин техники Apple в Батайске с 2014 года. iPhone, AirPods, Dyson, PlayStation, Marshall. Рассрочка, trade-in, сервисный центр и доставка. Куйбышева, 164.">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;500&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0c0b;
+  --bg2:#161412;
+  --bg3:#1f1c19;
+  --bone:#efe9df;
+  --muted:#958d80;
+  --line:rgba(239,233,223,.13);
+  --ember:#ff5a1f;
+  --serif:"Geologica",system-ui,sans-serif;
+  --sans:"Manrope",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--bone);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+::selection{background:var(--ember);color:var(--bg)}
+.wrap{width:min(1320px,100% - 48px);margin-inline:auto}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ph{background:var(--bg3)}
+
+/* ---------- preloader ---------- */
+.pre{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:transform 1s var(--ease) .1s}
+.pre.done{transform:translateY(-100%)}
+.pre__in{text-align:center}
+.pre__sa{font:200 96px/1 var(--serif);letter-spacing:-.06em;overflow:hidden}
+.pre__sa span{display:inline-block;transform:translateY(110%);animation:up .9s var(--ease) forwards}
+.pre__sa span+span{animation-delay:.08s}
+.pre__year{margin-top:18px;font:500 13px var(--mono);letter-spacing:.3em;color:var(--muted)}
+@keyframes up{to{transform:none}}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,transform .5s var(--ease)}
+.nav.solid{background:rgba(13,12,11,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav.hide{transform:translateY(-100%)}
+.nav__in{display:flex;align-items:center;gap:28px;height:76px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:42px;height:42px;border-radius:50%;border:1px solid var(--line)}
+.brand b{font:400 20px/1 var(--serif);letter-spacing:-.01em}
+.brand small{display:block;font:500 10px/1 var(--mono);letter-spacing:.2em;color:var(--muted);margin-top:5px}
+.nav__links{display:flex;gap:30px;margin-left:auto;font-size:14px;font-weight:500}
+.nav__links a{opacity:.75;transition:opacity .2s}
+.nav__links a:hover{opacity:1}
+.status{display:inline-flex;align-items:center;gap:8px;font:500 12px var(--mono);letter-spacing:.06em;color:var(--muted)}
+.status i{width:7px;height:7px;border-radius:50%;background:#3ccf6e;box-shadow:0 0 0 0 rgba(60,207,110,.6);animation:ping 2.2s infinite}
+.status.closed i{background:var(--muted);animation:none}
+@keyframes ping{70%{box-shadow:0 0 0 8px rgba(60,207,110,0)}100%{box-shadow:0 0 0 0 rgba(60,207,110,0)}}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:14px;border:1px solid var(--line);transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.pill:hover{background:var(--bone);color:var(--bg);border-color:var(--bone)}
+.pill--ember{background:var(--ember);border-color:var(--ember);color:#160700}
+.pill--ember:hover{background:var(--bone);border-color:var(--bone)}
+.pill svg{width:16px;height:16px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
+.hero__img{position:absolute;inset:0;z-index:-2}
+.hero__img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;transform:scale(1.15);animation:kb 18s ease-out forwards}
+@keyframes kb{to{transform:scale(1.02)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(13,12,11,.92) 0%,rgba(13,12,11,.55) 45%,rgba(13,12,11,.1) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(13,12,11,0) 35%)}
+.hero__body{padding:150px 0 54px}
+.hero h1{font:200 clamp(46px,7.2vw,124px)/.98 var(--serif);letter-spacing:-.055em;max-width:11ch}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.hero h1 .w > span{display:inline-block;transform:translateY(105%)}
+.ready .hero h1 .w > span{animation:up 1.1s var(--ease) forwards}
+.hero h1 em{font-style:normal;font-weight:500;color:var(--ember)}
+.hero__sub{max-width:440px;margin-top:30px;color:rgba(239,233,223,.78);font-size:18px;opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .7s}
+.hero__cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;opacity:0;transform:translateY(16px);transition:all 1s var(--ease) .85s}
+.ready .hero__sub,.ready .hero__cta{opacity:1;transform:none}
+.hero__foot{display:grid;grid-template-columns:repeat(3,1fr) auto;gap:24px;margin-top:70px;padding-top:22px;border-top:1px solid var(--line);align-items:end}
+.hero__foot div b{display:block;font:400 19px/1.3 var(--serif);margin-top:6px}
+.scroll{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
+.scroll svg{width:16px}
+@keyframes bob{50%{transform:translateY(6px)}}
+
+/* ---------- marquee ---------- */
+.marq{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;white-space:nowrap}
+.marq__t{display:inline-flex;animation:mq 34s linear infinite}
+.marq span{font:300 clamp(40px,6vw,88px)/1 var(--serif);letter-spacing:-.05em;padding-right:.5em}
+.marq span:nth-child(even){color:transparent;-webkit-text-stroke:1px rgba(239,233,223,.45);font-weight:500}
+.marq span::after{content:"✦";font-size:.35em;vertical-align:.6em;margin-left:.5em;color:var(--ember);-webkit-text-stroke:0}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- section titles ---------- */
+section{position:relative}
+.sec{padding:140px 0}
+.kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.kicker::before{content:"";width:28px;height:1px;background:var(--ember)}
+h2{font:200 clamp(36px,5vw,80px)/1.02 var(--serif);letter-spacing:-.05em}
+h2 em{font-style:normal;font-weight:500;color:var(--ember)}
+.lead{color:rgba(239,233,223,.72);font-size:19px;max-width:520px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv-img{clip-path:inset(12% 0 12% 0);transition:clip-path 1.4s var(--ease)}
+.rv-img.in{clip-path:inset(0 0 0 0)}
+
+/* ---------- feature (sticky) ---------- */
+.feat__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.feat__media{position:sticky;top:100px;height:calc(100svh - 140px);border-radius:28px;overflow:hidden}
+.feat__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.feat__media img.on{opacity:1;transform:none}
+.feat__badge{position:absolute;left:20px;bottom:20px;z-index:2;background:rgba(13,12,11,.7);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:10px 16px}
+.feat__count{position:absolute;right:22px;top:20px;z-index:2;font:400 15px var(--mono);color:var(--bone)}
+.feat__steps{padding:12vh 0 10vh}
+.step{min-height:62svh;display:flex;flex-direction:column;justify-content:center;opacity:.25;transition:opacity .6s}
+.step.on{opacity:1}
+.step .num{font:400 14px var(--mono);color:var(--ember);margin-bottom:18px}
+.step h3{font:300 clamp(28px,3vw,46px)/1.08 var(--serif);letter-spacing:-.04em;margin-bottom:18px}
+.step p{color:rgba(239,233,223,.7);max-width:440px;font-size:18px}
+.feat__head{margin-bottom:10px}
+
+/* ---------- care list ---------- */
+.care{background:var(--bone);color:var(--bg);border-radius:40px 40px 0 0}
+.care .mono{color:#6f675c}
+.care .lead{color:#4a443c}
+.care__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.care ol{list-style:none;margin-top:50px;border-top:1px solid rgba(13,12,11,.15)}
+.care li{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;padding:26px 0;border-bottom:1px solid rgba(13,12,11,.15);font:300 clamp(21px,2.3vw,32px)/1.18 var(--serif);letter-spacing:-.03em;position:relative}
+.care li small{font:500 12px var(--mono);color:#8b8377;letter-spacing:.1em}
+.care li::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:100%;background:var(--ember);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
+.care li.in::after{transform:scaleX(1)}
+.care li .tick{width:34px;height:34px;border-radius:50%;border:1px solid rgba(13,12,11,.2);display:grid;place-items:center;transition:background .5s,border-color .5s,color .5s}
+.care li.in .tick{background:var(--bg);border-color:var(--bg);color:var(--bone)}
+.care li .tick svg{width:14px;opacity:0;transition:opacity .4s .5s}
+.care li.in .tick svg{opacity:1}
+.care__photo{position:sticky;top:110px;border-radius:24px;overflow:hidden;aspect-ratio:3/4}
+.care__photo img{width:100%;height:100%;object-fit:cover}
+.care__note{position:absolute;left:18px;right:18px;bottom:18px;background:var(--bone);color:var(--bg);border-radius:16px;padding:16px 18px;font:400 18px/1.3 var(--serif)}
+
+/* ---------- services ---------- */
+.serv{background:var(--bone);color:var(--bg);padding-top:0}
+.serv__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.sv{position:relative;min-height:340px;border-radius:24px;background:#e4ddd1;padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:color .5s}
+.sv::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--bg);transform:translateY(101%);transition:transform .7s var(--ease);border-radius:inherit}
+.sv:hover{color:var(--bone)}
+.sv:hover::before{transform:none}
+.sv .ico{width:58px;height:58px;border-radius:50%;border:1px solid currentColor;display:grid;place-items:center;opacity:.8}
+.sv .ico svg{width:24px;height:24px}
+.sv h3{font:400 28px/1.05 var(--serif);letter-spacing:-.04em;margin-bottom:10px}
+.sv p{font-size:15px;opacity:.7}
+.sv .n{position:absolute;top:24px;right:26px;font:500 12px var(--mono);opacity:.5}
+
+/* ---------- catalog list ---------- */
+.cat__list{margin-top:60px;border-top:1px solid var(--line)}
+.ci{display:grid;grid-template-columns:90px 1.3fr 1fr 60px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid var(--line);position:relative;cursor:default}
+.ci .n{font:400 13px var(--mono);color:var(--muted)}
+.ci h3{font:200 clamp(30px,4vw,62px)/1 var(--serif);letter-spacing:-.05em;transition:transform .6s var(--ease),color .3s}
+.ci p{color:var(--muted);font-size:15px;max-width:380px}
+.ci .arr{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:all .4s var(--ease)}
+.ci .arr svg{width:18px}
+.ci:hover h3{transform:translateX(18px);color:var(--ember)}
+.ci:hover .arr{background:var(--ember);border-color:var(--ember);color:#160700;transform:rotate(-45deg)}
+.ci .thumb{display:none}
+.cursor-img{position:fixed;left:0;top:0;width:280px;height:360px;border-radius:18px;overflow:hidden;pointer-events:none;z-index:40;opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-6deg);transition:opacity .35s,transform .5s var(--ease)}
+.cursor-img.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.cursor-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.cursor-img img.on{opacity:1}
+
+/* ---------- journal ---------- */
+.jr__head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.jr__nav{display:flex;gap:8px}
+.jr__nav button{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--bone);cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
+.jr__nav button:hover{background:var(--bone);color:var(--bg)}
+.jr__nav svg{width:18px}
+.jr__track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:56px;padding:0 max(24px,calc((100vw - 1320px)/2)) 30px;scroll-padding-inline:max(24px,calc((100vw - 1320px)/2));scrollbar-width:none;cursor:grab}
+.jr__track::-webkit-scrollbar{display:none}
+.jr__track.drag{cursor:grabbing;scroll-snap-type:none}
+.post{flex:0 0 clamp(270px,28vw,380px);scroll-snap-align:start}
+.post__img{aspect-ratio:4/5;border-radius:20px;overflow:hidden;position:relative}
+.post__img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.post:hover .post__img img{transform:scale(1.06)}
+.post__date{position:absolute;top:14px;left:14px;background:rgba(13,12,11,.72);backdrop-filter:blur(8px);border-radius:999px;padding:7px 12px;font:500 11px var(--mono);letter-spacing:.08em}
+.post h3{font:400 21px/1.25 var(--serif);letter-spacing:-.03em;margin-top:20px}
+.post p{color:var(--muted);font-size:15px;margin-top:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.post .more{display:inline-flex;gap:8px;margin-top:14px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .3s,color .3s}
+.post:hover .more{color:var(--ember);border-color:var(--ember)}
+
+/* ---------- visit ---------- */
+.visit{border-top:1px solid var(--line)}
+.visit__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:end}
+.addr{font:200 clamp(52px,7.6vw,128px)/.95 var(--serif);letter-spacing:-.06em;margin:18px 0 30px}
+.addr em{font-style:normal;font-weight:500;color:var(--ember)}
+.hours{border-top:1px solid var(--line)}
+.hours div{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line);font-size:18px}
+.hours div span:last-child{font:400 16px var(--mono)}
+.hours div.today{color:var(--ember)}
+.hours div.today span:first-child::after{content:" · сегодня";font:500 12px var(--mono);letter-spacing:.06em}
+.big-tel{display:block;font:300 clamp(32px,4.2vw,62px)/1 var(--serif);letter-spacing:-.04em;margin:34px 0 26px;transition:color .3s}
+.big-tel:hover{color:var(--ember)}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px}
+footer{padding:80px 0 40px;overflow:hidden}
+.foot__sa{font:200 clamp(120px,30vw,460px)/.8 var(--serif);letter-spacing:-.08em;color:var(--bg2);-webkit-text-stroke:1px var(--line);text-align:center;user-select:none}
+.foot__row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;font-size:13px;color:var(--muted)}
+
+/* floating call */
+.fab{display:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .nav__links{display:none}
+  .nav .status{display:none}
+  .hero__foot{grid-template-columns:1fr 1fr}
+  .hero__foot .scroll{display:none}
+  .feat__grid,.care__grid,.visit__grid{grid-template-columns:1fr;gap:40px}
+  .feat__media{position:relative;top:0;height:auto;aspect-ratio:3/4}
+  .feat__steps{padding:0}
+  .step{min-height:auto;opacity:1;padding:24px 0;border-top:1px solid var(--line)}
+  .care__photo{position:relative;top:0}
+  .serv__grid{grid-template-columns:1fr 1fr}
+  .ci{grid-template-columns:1fr 64px;gap:14px}
+  .ci .n,.ci p{display:none}
+  .ci .thumb{display:block;grid-column:1/-1;border-radius:16px;overflow:hidden;aspect-ratio:16/10}
+  .ci .thumb img{width:100%;height:100%;object-fit:cover}
+  .cursor-img{display:none}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{width:calc(100% - 32px)}
+  .nav__in{height:66px;gap:12px}
+  .nav .pill{padding:10px 16px}
+  .brand small{display:none}
+  .sec{padding:90px 0}
+  .hero__body{padding-top:120px}
+  .hero__foot{grid-template-columns:1fr;gap:14px;margin-top:44px}
+  .serv__grid{grid-template-columns:1fr}
+  .sv{min-height:220px}
+  .care{border-radius:28px 28px 0 0}
+  .care li{grid-template-columns:44px 1fr auto;gap:12px;padding:20px 0}
+  .fab{display:grid;place-items:center;position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--ember);color:#160700;box-shadow:0 10px 30px rgba(255,90,31,.35)}
+  .fab svg{width:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
+  .rv{opacity:1;transform:none}.rv-img{clip-path:none}
+}
+</style>
+</head>
+<body>
+
+<div class="pre" id="pre" aria-hidden="true"><div class="pre__in">
+  <div class="pre__sa"><span>S</span><span>A</span></div>
+  <div class="pre__year">SINCE <span id="yr">2014</span></div>
+</div></div>
+
+<!-- NAV -->
+<header class="nav" id="nav"><div class="wrap nav__in">
+  <a href="#top" class="brand"><img data-img="logo" alt="Steve’s Apple" width="42" height="42"><span><b>Steve’s Apple</b><small>BATAYSK · SINCE 2014</small></span></a>
+  <nav class="nav__links"><a href="#iphone">iPhone</a><a href="#care">Сервис</a><a href="#catalog">Каталог</a><a href="#journal">Журнал</a><a href="#visit">Контакты</a></nav>
+  <span class="status js-status"><i></i><span>…</span></span>
+  <a class="pill" href="tel:+79282267737">Позвонить</a>
+</div></header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__img"><img data-img="hero" alt="iPhone 16 на MacBook в Steve’s Apple" fetchpriority="high"></div>
+  <div class="wrap hero__body">
+    <div class="mono" style="margin-bottom:22px">Магазин техники Apple · Батайск</div>
+    <h1 id="heroTitle">Новый iPhone ждёт <em>вас</em> в Батайске</h1>
+    <p class="hero__sub">Новая техника Apple всегда в наличии. Поможем выбрать, перенесём данные и, если нужно, оформим рассрочку.</p>
+    <div class="hero__cta">
+      <a class="pill pill--ember" href="tel:+79282267737"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>+7 (928) 226-77-37</a>
+      <a class="pill" href="https://api.whatsapp.com/send?phone=79282267737&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener">Написать в WhatsApp</a>
+    </div>
+    <div class="hero__foot">
+      <div><span class="mono">Адрес</span><b>Куйбышева, 164</b></div>
+      <div><span class="mono">Будни</span><b>10:00 — 21:00</b></div>
+      <div><span class="mono">Выходные</span><b>12:00 — 21:00</b></div>
+      <a class="scroll" href="#iphone" aria-label="Листать вниз"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="marq" aria-hidden="true"><div class="marq__t" id="marq"></div></div>
+
+<!-- FEATURE -->
+<section class="sec" id="iphone">
+  <div class="wrap feat__grid">
+    <div class="feat__media rv-img" id="featMedia">
+      <img data-img="pm1" alt="iPhone 16 Pro Max Natural Titanium" class="on">
+      <img data-img="pm2" alt="iPhone 16 Pro Max в коробке">
+      <img data-img="pm3" alt="Камеры iPhone 16 Pro Max">
+      <img data-img="i16b" alt="iPhone 16 в руке">
+      <span class="feat__count" id="featCount">01 / 04</span>
+      <span class="feat__badge mono" style="color:var(--bone)">iPhone 16 Pro Max · Natural Titanium</span>
+    </div>
+    <div>
+      <div class="feat__head rv">
+        <div class="kicker mono">Вся линейка iPhone 16</div>
+        <h2>Функции, которые <em>удивят</em></h2>
+      </div>
+      <div class="feat__steps" id="steps">
+        <div class="step on"><span class="num">01 — Camera Control</span><h3>Новая кнопка камеры</h3><p>Проведите пальцем, чтобы настроить экспозицию или глубину резкости, переключаться между объективами или приближать.</p></div>
+        <div class="step"><span class="num">02 — Производительность</span><h3>Чип A18</h3><p>Опережает на два поколения A16 Bionic в iPhone 15.</p></div>
+        <div class="step"><span class="num">03 — Система камер</span><h3>Снимки вблизи и издалека</h3><p>Универсальная система камер iPhone 16 делает прекрасные фотографии — как с близкого, так и с большого расстояния.</p></div>
+        <div class="step"><span class="num">04 — Батарея</span><h3>Работает заметно дольше</h3><p>Внутри освободили место для более мощной батареи — она работает вместе с A18 и заметно продлевает время без подзарядки.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARE -->
+<section class="sec care" id="care">
+  <div class="wrap care__grid">
+    <div>
+      <div class="kicker mono">Больше, чем покупка</div>
+      <h2>Уходите с&nbsp;полностью <em>готовым</em> iPhone</h2>
+      <ol id="care">
+        <li><small>01</small>Поможем с выбором<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></li>
+        <li><small>02</small>Подберём аксессуары<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></li>
+        <li><small>03</small>Перенесём все данные<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></li>
+        <li><small>04</small>Установим банки и удалённые приложения<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></li>
+        <li><small>05</small>Если нужно — оформим рассрочку<span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></li>
+      </ol>
+    </div>
+    <div class="care__photo rv-img"><img data-img="i16a" alt="iPhone 16 и MacBook"><div class="care__note">Ваш новый iPhone ждёт вас в Steve’s Apple</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec serv">
+  <div class="wrap">
+    <div class="kicker mono rv">Что ещё мы делаем</div>
+    <h2 class="rv">Четыре причины <em>вернуться</em></h2>
+    <div class="serv__grid">
+      <div class="sv rv"><span class="n">01</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><div><h3>Рассрочка</h3><p>Новый iPhone сейчас, оплата частями.</p></div></div>
+      <div class="sv rv" style="transition-delay:.08s"><span class="n">02</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 9h13l-3-3M20 15H7l3 3"/></svg></span><div><h3>Trade-in</h3><p>Сдайте старое устройство в зачёт нового.</p></div></div>
+      <div class="sv rv" style="transition-delay:.16s"><span class="n">03</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><div><h3>Сервисный центр</h3><p>Обслуживание и ремонт техники.</p></div></div>
+      <div class="sv rv" style="transition-delay:.24s"><span class="n">04</span><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><div><h3>Доставка</h3><p>Привезём покупку — уточните условия по телефону.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section class="sec" id="catalog">
+  <div class="wrap">
+    <div class="kicker mono rv">Не только Apple</div>
+    <h2 class="rv">Всё, что хочется <em>держать</em> в руках</h2>
+    <div class="cat__list" id="catList">
+      <a class="ci" href="tel:+79282267737" data-img="i16a"><span class="n">01</span><h3>iPhone</h3><p>Вся линейка iPhone 16 и iPhone 16 Pro — новые, в наличии.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="thumb"><img data-img="i16a" alt="" loading="lazy"></span></a>
+      <a class="ci" href="tel:+79282267737" data-img="ap1"><span class="n">02</span><h3>AirPods</h3><p>AirPods 4 — базовая версия и с активным шумоподавлением.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="thumb"><img data-img="ap1" alt="" loading="lazy"></span></a>
+      <a class="ci" href="tel:+79282267737" data-img="dy1"><span class="n">03</span><h3>Dyson</h3><p>Airstrait и вся продукция Dyson — сушит и выпрямляет одновременно.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="thumb"><img data-img="dy1" alt="" loading="lazy"></span></a>
+      <a class="ci" href="tel:+79282267737" data-img="ms1"><span class="n">04</span><h3>Marshall</h3><p>Kilburn II — 20+ часов музыки и узнаваемый звук.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="thumb"><img data-img="ms1" alt="" loading="lazy"></span></a>
+      <a class="ci" href="tel:+79282267737" data-img="ya1"><span class="n">05</span><h3>Яндекс Станция</h3><p>Вся линейка, включая Станцию Макс с хабом умного дома.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><span class="thumb"><img data-img="ya1" alt="" loading="lazy"></span></a>
+      <a class="ci" href="tel:+79282267737"><span class="n">06</span><h3>PlayStation</h3><p>Консоли и аксессуары — уточняйте наличие по телефону.</p><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </div>
+</section>
+<div class="cursor-img" id="cimg"></div>
+
+<!-- JOURNAL -->
+<section class="sec" id="journal" style="padding-top:40px">
+  <div class="wrap jr__head">
+    <div><div class="kicker mono rv">Журнал</div><h2 class="rv">Новое в <em>Steve’s</em></h2></div>
+    <div class="jr__nav"><button id="jrPrev" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button id="jrNext" aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+  </div>
+  <div class="jr__track" id="jr"></div>
+</section>
+
+<!-- VISIT -->
+<section class="sec visit" id="visit">
+  <div class="wrap visit__grid">
+    <div>
+      <div class="kicker mono rv">Приходите</div>
+      <div class="addr rv">Куйбышева,<br><em>164</em></div>
+      <p class="lead rv">Батайск, Россия. Заходите посмотреть технику вживую — подскажем и покажем.</p>
+      <a class="big-tel rv" href="tel:+79282267737">+7 (928) 226-77-37</a>
+      <div class="contact-row rv">
+        <a class="pill pill--ember" href="https://yandex.ru/maps/?text=%D0%91%D0%B0%D1%82%D0%B0%D0%B9%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%9A%D1%83%D0%B9%D0%B1%D1%8B%D1%88%D0%B5%D0%B2%D0%B0%2C%20164" target="_blank" rel="noopener">Построить маршрут</a>
+        <a class="pill" href="https://api.whatsapp.com/send?phone=79282267737&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="pill" href="viber://chat?number=79282267737">Viber</a>
+        <a class="pill" href="https://vk.com/club226143430" target="_blank" rel="noopener">ВКонтакте</a>
+      </div>
+    </div>
+    <div class="rv">
+      <div class="status js-status" style="margin-bottom:20px"><i></i><span>…</span></div>
+      <div class="hours" id="hours"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="foot__sa" aria-hidden="true">SA</div>
+  <div class="foot__row"><span>© Steve’s Apple, Батайск · since 2014</span><span>iPhone · AirPods · Dyson · PlayStation · Marshall</span></div>
+</div></footer>
+
+<a class="fab" href="tel:+79282267737" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></a>
+
+<script>
+/* Фото магазина из сообщества ВКонтакте */
+const T1="32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1080%2C1080x1620%2C1280x1920%2C1290x1935";
+const T2="32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1080%2C1080x1620%2C1280x1920";
+const T4="32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560";
+const vk=(host,id,as,cs)=>`https://${host}.userapi.com/s/v1/ig2/${id}.jpg?quality=95&as=${as}&from=bu&cs=${cs}`;
+const IMG={
+  logo:"https://sun9-42.userapi.com/s/v1/ig2/lDraszTHIIUh8D2AJ2juzM3Di-rt4bgYD2CJ4n8sX42teKTGWmgX11BnlGItAeFcbWP8fznztrhQk9Qx5RmnGPqn.jpg?quality=95&crop=0%2C0%2C1000%2C1000&as=32x32%2C48x48%2C72x72%2C108x108%2C160x160%2C240x240%2C360x360%2C480x480%2C540x540%2C640x640%2C720x720&ava=1&cs=240x240",
+  hero:vk("sun9-52","qTgisdNwmNjL0F5LhMMr-7f3GrSKjGRTmM82ZhC0qMRaUoPfyOl1nqwz4oMt1k1FomZ-wYHwFlcMddsGYpl319bD",T1,"1280x1920"),
+  i16a:vk("sun9-52","qTgisdNwmNjL0F5LhMMr-7f3GrSKjGRTmM82ZhC0qMRaUoPfyOl1nqwz4oMt1k1FomZ-wYHwFlcMddsGYpl319bD",T1,"1080x1620"),
+  i16b:vk("sun9-1","mRnEHolWIU9lqgr4Zkabo6fWxVPIOW-gDIZh2LmRILEmB3dHvC_Wp-XQpcmed_nkxGxOrGCFATAlSUic0WAzOk-N",T1,"1080x1620"),
+  i16c:vk("sun9-50","7atu59S6coAbgTBCHa4JHZAuDlKz5KiYz4-6KM4o7yoelrzyfslLYkTbP2yeW3CQXS7J0BarnHFKcObqFWkB6mV0",T1,"1080x1620"),
+  pm1:vk("sun9-8","2jaDI1o26I1n03AEo9duH3XJjAMj14SN95onw9WgZKmy5H5toycEsz5s3lr20fb4N0hzHhYSixD9NdyYmD7UXgKq",T4,"1080x1440"),
+  pm2:vk("sun9-20","FP3jzeUtzKTxdDyjBBaV8qYG9q2gkBXgz64KSxRIZS3E2_wILW9Noow1auZwCAw1tfgmLaaHJfv4c5T9YfWxQAxr",T4,"1080x1440"),
+  pm3:vk("sun9-35","WuhShgfurOrAMFubuE-IikGpbIznQERuQ6SlP1Lig2bfeMxTHrFW-qVPTFDRKOOqHdpbT7IOMkt76GCfxTfFkXVG",T4,"1080x1440"),
+  ap1:vk("sun9-16","ar6Pp4AY3Ll6RMpn4W-_GA3D-ZN6P5gbiG2rXG7DT3F02CMgYvuLzW9RUObMHYKaJBsnD1_EU6rQpw_sJ-FIJ7Fk",T2,"1080x1620"),
+  ms1:vk("sun9-80","WeciO0TQa590GjsaW-EUpxpqMS3oinXoV2CztxNcK60HglROS48LcdMzMHcdFuQ2mXlxoCo1zCnFt6A8mnsx03s1",T2,"1080x1620"),
+  dy1:vk("sun9-22","vRMmBsVkX37Mv-04dqXgMN5XwY8yHk4GDRD6Vcr7zPlH3kSbMDd8JvUddAnqwi2QcJDw6iMDD4gZswSYcHFaLKHI",T1,"1080x1620"),
+  ya1:vk("sun9-43","tUJx_nHZe-DxOyCU3Lssm_U4Tt4sBTbze3iXYVs89RnIk0ox1Gn8KrV6kRx2HtgT7vdC2ClhTBkdbvbQI7x9ECgJ","32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1081%2C1080x1621%2C1280x1921%2C1290x1936","1080x1621")
+};
+
+/* Журнал — посты сообщества */
+const POSTS=[
+  {d:"24.02.2025",img:"ap1",t:"AirPods 4 — свобода движения и отличный звук",p:"Две версии: базовая и с активным шумоподавлением. Удобная посадка, сенсорное управление, до 5 часов без подзарядки.",n:51},
+  {d:"23.12.2024",img:"ms1",t:"Marshall Kilburn II — музыкальный герой",p:"2,5 кг, 20+ часов на одной зарядке, Bluetooth 5.0 aptX, защита IPX2 и аналоговые регуляторы на верхней панели.",n:49},
+  {d:"04.12.2024",img:"i16c",t:"iPhone 16 — новые функции, которые удивят",p:"Кнопка Camera Control, чип A18, универсальная система камер и более мощная батарея.",n:44},
+  {d:"13.11.2024",img:"pm1",t:"iPhone 16 Pro Max Natural Titanium",p:"Поможем с выбором, подберём аксессуары, перенесём данные и установим банковские приложения.",n:40},
+  {d:"14.10.2024",img:"dy1",t:"Dyson Airstrait — почему о нём все говорят",p:"Фен и выпрямитель в одном: укладывает волосы нагретым воздухом, без горячих пластин.",n:31},
+  {d:"09.10.2024",img:"ya1",t:"Яндекс Станция Макс — умный помощник дома",p:"Объёмный звук, хаб Zigbee для умного дома и Алиса, которая всегда готова помочь.",n:29}
+];
+
+/* подставляем фото */
+function setImg(el,key){ if(!IMG[key]) return; el.referrerPolicy="no-referrer"; el.decoding="async"; el.onerror=()=>{el.style.opacity=0}; el.src=IMG[key]; }
+document.querySelectorAll("img[data-img]").forEach(i=>setImg(i,i.dataset.img));
+
+/* журнал */
+const jr=document.getElementById("jr");
+jr.innerHTML=POSTS.map((p,i)=>`<a class="post rv" style="transition-delay:${i*.07}s" href="https://vk.com/club226143430?w=wall-226143430_${p.n}" target="_blank" rel="noopener">
+  <div class="post__img ph"><img data-img="${p.img}" alt="" loading="lazy" draggable="false"><span class="post__date">${p.d}</span></div>
+  <h3>${p.t}</h3><p>${p.p}</p><span class="more">Читать во ВКонтакте →</span></a>`).join("");
+jr.querySelectorAll("img[data-img]").forEach(i=>setImg(i,i.dataset.img));
+const step=()=>jr.querySelector(".post").offsetWidth+20;
+document.getElementById("jrNext").onclick=()=>jr.scrollBy({left:step(),behavior:"smooth"});
+document.getElementById("jrPrev").onclick=()=>jr.scrollBy({left:-step(),behavior:"smooth"});
+/* перетаскивание мышью */
+let dx=null,sl=0,moved=false;
+jr.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;dx=e.clientX;sl=jr.scrollLeft;moved=false;jr.classList.add("drag")});
+addEventListener("pointermove",e=>{if(dx===null)return;const d=e.clientX-dx;if(Math.abs(d)>4)moved=true;jr.scrollLeft=sl-d});
+addEventListener("pointerup",()=>{dx=null;jr.classList.remove("drag")});
+jr.addEventListener("click",e=>{if(moved){e.preventDefault();moved=false}},true);
+
+/* бегущая строка */
+const words=["iPhone","AirPods","Dyson","PlayStation","Marshall","Яндекс Станция"];
+document.getElementById("marq").innerHTML=[...words,...words,...words,...words].map(w=>`<span>${w}</span>`).join("");
+
+/* заголовок по словам */
+const h=document.getElementById("heroTitle");
+let wi=0;
+h.innerHTML=h.innerHTML.split(/(<em>.*?<\/em>|\s+)/).filter(Boolean).map(part=>{
+  if(/^\s+$/.test(part)) return " ";
+  return `<span class="w"><span style="animation-delay:${(wi++)*.08+.15}s">${part}</span></span>`;
+}).join("");
+
+/* часы работы и статус (время Москвы) */
+function msk(){const p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Moscow",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return{wd:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].indexOf(g("weekday")),m:+g("hour")*60+ +g("minute")}}
+const DAYS=["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"];
+const open=d=>d<5?600:720, close=1260;
+function status(){
+  const {wd,m}=msk(); const o=open(wd);
+  let txt,cls="";
+  if(m>=o&&m<close) txt="Открыто до 21:00";
+  else { cls="closed"; const next=m<o?wd:(wd+1)%7; txt="Закрыто · откроемся "+(next===wd?"сегодня":"завтра")+" в "+(open(next)===600?"10:00":"12:00"); }
+  document.querySelectorAll(".js-status").forEach(s=>{s.classList.toggle("closed",!!cls);s.querySelector("span").textContent=txt});
+  document.getElementById("hours").innerHTML=DAYS.map((d,i)=>`<div class="${i===wd?"today":""}"><span>${d}</span><span>${i<5?"10:00 — 21:00":"12:00 — 21:00"}</span></div>`).join("");
+}
+status(); setInterval(status,60000);
+
+/* прелоадер: 2014 → текущий год */
+const pre=document.getElementById("pre"), yr=document.getElementById("yr"), now=new Date().getFullYear();
+let y=2014; const ti=setInterval(()=>{y++; yr.textContent=y; if(y>=now) clearInterval(ti)},55);
+addEventListener("load",()=>setTimeout(finish,250)); setTimeout(finish,2600);
+let finished=false;
+function finish(){ if(finished) return; finished=true; yr.textContent=now; pre.classList.add("done"); document.body.classList.add("ready"); }
+
+/* появление при прокрутке */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll(".rv,.rv-img,#care li").forEach(el=>io.observe(el));
+document.querySelectorAll("#care li").forEach((li,i)=>li.style.transitionDelay=i*.12+"s");
+
+/* шапка */
+const nav=document.getElementById("nav"); let ly=0;
+addEventListener("scroll",()=>{const s=scrollY; nav.classList.toggle("solid",s>40); nav.classList.toggle("hide",s>ly&&s>500); ly=s},{passive:true});
+
+/* закреплённый блок iPhone: шаги меняют фото */
+const steps=[...document.querySelectorAll(".step")], fimgs=[...document.querySelectorAll("#featMedia img")], fc=document.getElementById("featCount");
+const sio=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; const i=steps.indexOf(e.target);
+  steps.forEach((s,j)=>s.classList.toggle("on",j===i)); fimgs.forEach((im,j)=>im.classList.toggle("on",j===i)); fc.textContent=String(i+1).padStart(2,"0")+" / 04"; }),{rootMargin:"-45% 0px -45% 0px"});
+steps.forEach(s=>sio.observe(s));
+
+/* каталог: фото следует за курсором */
+const cimg=document.getElementById("cimg");
+if(matchMedia("(hover:hover) and (min-width:981px)").matches){
+  const keys=[...new Set([...document.querySelectorAll(".ci[data-img]")].map(c=>c.dataset.img))];
+  cimg.innerHTML=keys.map(k=>`<img data-k="${k}" alt="">`).join("");
+  cimg.querySelectorAll("img").forEach(i=>setImg(i,i.dataset.k));
+  let tx=0,ty=0,cx=0,cy=0;
+  document.querySelectorAll(".ci").forEach(ci=>{
+    ci.addEventListener("mouseenter",()=>{ const k=ci.dataset.img; if(!k) return; cimg.classList.add("on"); cimg.querySelectorAll("img").forEach(i=>i.classList.toggle("on",i.dataset.k===k)); });
+    ci.addEventListener("mouseleave",()=>cimg.classList.remove("on"));
+  });
+  addEventListener("mousemove",e=>{tx=e.clientX+170;ty=e.clientY});
+  (function loop(){cx+=(tx-cx)*.12;cy+=(ty-cy)*.12;cimg.style.left=cx+"px";cimg.style.top=cy+"px";requestAnimationFrame(loop)})();
+}
+</script>
+</body>
+</html>
