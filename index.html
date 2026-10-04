@@ -33,7 +33,6 @@ img{display:block;max-width:100%}
 .mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .ph{background:var(--bg3)}
 
-/* ---------- preloader ---------- */
 .pre{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:transform 1s var(--ease) .1s}
 .pre.done{transform:translateY(-100%)}
 .pre__in{text-align:center}
@@ -43,7 +42,6 @@ img{display:block;max-width:100%}
 .pre__year{margin-top:18px;font:500 13px var(--mono);letter-spacing:.3em;color:var(--muted)}
 @keyframes up{to{transform:none}}
 
-/* ---------- nav ---------- */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,backdrop-filter .4s,transform .5s var(--ease)}
 .nav.solid{background:rgba(13,12,11,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav.hide{transform:translateY(-100%)}
@@ -65,7 +63,6 @@ img{display:block;max-width:100%}
 .pill--ember:hover{background:var(--bone);border-color:var(--bone)}
 .pill svg{width:16px;height:16px}
 
-/* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;isolation:isolate}
 .hero__img{position:absolute;inset:0;z-index:-2}
 .hero__img img{width:100%;height:100%;object-fit:cover;object-position:60% 40%;transform:scale(1.15);animation:kb 18s ease-out forwards}
@@ -86,7 +83,6 @@ img{display:block;max-width:100%}
 .scroll svg{width:16px}
 @keyframes bob{50%{transform:translateY(6px)}}
 
-/* ---------- marquee ---------- */
 .marq{border-block:1px solid var(--line);overflow:hidden;padding:26px 0;white-space:nowrap}
 .marq__t{display:inline-flex;animation:mq 34s linear infinite}
 .marq span{font:300 clamp(40px,6vw,88px)/1 var(--serif);letter-spacing:-.05em;padding-right:.5em}
@@ -94,7 +90,6 @@ img{display:block;max-width:100%}
 .marq span::after{content:"✦";font-size:.35em;vertical-align:.6em;margin-left:.5em;color:var(--ember);-webkit-text-stroke:0}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* ---------- section titles ---------- */
 section{position:relative}
 .sec{padding:140px 0}
 .kicker{display:flex;align-items:center;gap:14px;margin-bottom:26px}
@@ -103,13 +98,11 @@ h2{font:200 clamp(36px,5vw,80px)/1.02 var(--serif);letter-spacing:-.05em}
 h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .lead{color:rgba(239,233,223,.72);font-size:19px;max-width:520px}
 
-/* reveal */
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .rv.in{opacity:1;transform:none}
 .rv-img{clip-path:inset(12% 0 12% 0);transition:clip-path 1.4s var(--ease)}
 .rv-img.in{clip-path:inset(0 0 0 0)}
 
-/* ---------- feature (sticky) ---------- */
 .feat__grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
 .feat__media{position:sticky;top:100px;height:calc(100svh - 140px);border-radius:28px;overflow:hidden}
 .feat__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
@@ -124,7 +117,6 @@ h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .step p{color:rgba(239,233,223,.7);max-width:440px;font-size:18px}
 .feat__head{margin-bottom:10px}
 
-/* ---------- care list ---------- */
 .care{background:var(--bone);color:var(--bg);border-radius:40px 40px 0 0}
 .care .mono{color:#6f675c}
 .care .lead{color:#4a443c}
@@ -142,7 +134,6 @@ h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .care__photo img{width:100%;height:100%;object-fit:cover}
 .care__note{position:absolute;left:18px;right:18px;bottom:18px;background:var(--bone);color:var(--bg);border-radius:16px;padding:16px 18px;font:400 18px/1.3 var(--serif)}
 
-/* ---------- services ---------- */
 .serv{background:var(--bone);color:var(--bg);padding-top:0}
 .serv__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
 .sv{position:relative;min-height:340px;border-radius:24px;background:#e4ddd1;padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:color .5s}
@@ -155,7 +146,6 @@ h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .sv p{font-size:15px;opacity:.7}
 .sv .n{position:absolute;top:24px;right:26px;font:500 12px var(--mono);opacity:.5}
 
-/* ---------- catalog list ---------- */
 .cat__list{margin-top:60px;border-top:1px solid var(--line)}
 .ci{display:grid;grid-template-columns:90px 1.3fr 1fr 60px;align-items:center;gap:24px;padding:34px 0;border-bottom:1px solid var(--line);position:relative;cursor:default}
 .ci .n{font:400 13px var(--mono);color:var(--muted)}
@@ -171,7 +161,6 @@ h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .cursor-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
 .cursor-img img.on{opacity:1}
 
-/* ---------- journal ---------- */
 .jr__head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
 .jr__nav{display:flex;gap:8px}
 .jr__nav button{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--bone);cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
@@ -190,7 +179,6 @@ h2 em{font-style:normal;font-weight:500;color:var(--ember)}
 .post .more{display:inline-flex;gap:8px;margin-top:14px;font-size:14px;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:3px;transition:border-color .3s,color .3s}
 .post:hover .more{color:var(--ember);border-color:var(--ember)}
 
-/* ---------- visit ---------- */
 .visit{border-top:1px solid var(--line)}
 .visit__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:70px;align-items:end}
 .addr{font:200 clamp(52px,7.6vw,128px)/.95 var(--serif);letter-spacing:-.06em;margin:18px 0 30px}
@@ -207,10 +195,8 @@ footer{padding:80px 0 40px;overflow:hidden}
 .foot__sa{font:200 clamp(120px,30vw,460px)/.8 var(--serif);letter-spacing:-.08em;color:var(--bg2);-webkit-text-stroke:1px var(--line);text-align:center;user-select:none}
 .foot__row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:40px;font-size:13px;color:var(--muted)}
 
-/* floating call */
 .fab{display:none}
 
-/* ---------- responsive ---------- */
 @media (max-width:980px){
   .nav__links{display:none}
   .nav .status{display:none}
@@ -257,7 +243,6 @@ footer{padding:80px 0 40px;overflow:hidden}
   <div class="pre__year">SINCE <span id="yr">2014</span></div>
 </div></div>
 
-<!-- NAV -->
 <header class="nav" id="nav"><div class="wrap nav__in">
   <a href="#top" class="brand"><img data-img="logo" alt="Steve’s Apple" width="42" height="42"><span><b>Steve’s Apple</b><small>BATAYSK · SINCE 2014</small></span></a>
   <nav class="nav__links"><a href="#iphone">iPhone</a><a href="#care">Сервис</a><a href="#catalog">Каталог</a><a href="#journal">Журнал</a><a href="#visit">Контакты</a></nav>
@@ -266,7 +251,6 @@ footer{padding:80px 0 40px;overflow:hidden}
 </div></header>
 
 <main id="top">
-<!-- HERO -->
 <section class="hero">
   <div class="hero__img"><img data-img="hero" alt="iPhone 16 на MacBook в Steve’s Apple" fetchpriority="high"></div>
   <div class="wrap hero__body">
@@ -288,7 +272,6 @@ footer{padding:80px 0 40px;overflow:hidden}
 
 <div class="marq" aria-hidden="true"><div class="marq__t" id="marq"></div></div>
 
-<!-- FEATURE -->
 <section class="sec" id="iphone">
   <div class="wrap feat__grid">
     <div class="feat__media rv-img" id="featMedia">
@@ -314,7 +297,6 @@ footer{padding:80px 0 40px;overflow:hidden}
   </div>
 </section>
 
-<!-- CARE -->
 <section class="sec care" id="care">
   <div class="wrap care__grid">
     <div>
@@ -332,7 +314,6 @@ footer{padding:80px 0 40px;overflow:hidden}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="sec serv">
   <div class="wrap">
     <div class="kicker mono rv">Что ещё мы делаем</div>
@@ -346,7 +327,6 @@ footer{padding:80px 0 40px;overflow:hidden}
   </div>
 </section>
 
-<!-- CATALOG -->
 <section class="sec" id="catalog">
   <div class="wrap">
     <div class="kicker mono rv">Не только Apple</div>
@@ -363,7 +343,6 @@ footer{padding:80px 0 40px;overflow:hidden}
 </section>
 <div class="cursor-img" id="cimg"></div>
 
-<!-- JOURNAL -->
 <section class="sec" id="journal" style="padding-top:40px">
   <div class="wrap jr__head">
     <div><div class="kicker mono rv">Журнал</div><h2 class="rv">Новое в <em>Steve’s</em></h2></div>
@@ -372,7 +351,6 @@ footer{padding:80px 0 40px;overflow:hidden}
   <div class="jr__track" id="jr"></div>
 </section>
 
-<!-- VISIT -->
 <section class="sec visit" id="visit">
   <div class="wrap visit__grid">
     <div>
@@ -403,7 +381,6 @@ footer{padding:80px 0 40px;overflow:hidden}
 <a class="fab" href="tel:+79282267737" aria-label="Позвонить"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></a>
 
 <script>
-/* Фото магазина из сообщества ВКонтакте */
 const T1="32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1080%2C1080x1620%2C1280x1920%2C1290x1935";
 const T2="32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1080%2C1080x1620%2C1280x1920";
 const T4="32x43%2C48x64%2C72x96%2C108x144%2C160x213%2C240x320%2C360x480%2C480x640%2C540x720%2C640x853%2C720x960%2C1080x1440%2C1280x1707%2C1440x1920%2C1920x2560";
@@ -423,7 +400,6 @@ const IMG={
   ya1:vk("sun9-43","tUJx_nHZe-DxOyCU3Lssm_U4Tt4sBTbze3iXYVs89RnIk0ox1Gn8KrV6kRx2HtgT7vdC2ClhTBkdbvbQI7x9ECgJ","32x48%2C48x72%2C72x108%2C108x162%2C160x240%2C240x360%2C360x540%2C480x720%2C540x810%2C640x960%2C720x1081%2C1080x1621%2C1280x1921%2C1290x1936","1080x1621")
 };
 
-/* Журнал — посты сообщества */
 const POSTS=[
   {d:"24.02.2025",img:"ap1",t:"AirPods 4 — свобода движения и отличный звук",p:"Две версии: базовая и с активным шумоподавлением. Удобная посадка, сенсорное управление, до 5 часов без подзарядки.",n:51},
   {d:"23.12.2024",img:"ms1",t:"Marshall Kilburn II — музыкальный герой",p:"2,5 кг, 20+ часов на одной зарядке, Bluetooth 5.0 aptX, защита IPX2 и аналоговые регуляторы на верхней панели.",n:49},
@@ -433,11 +409,9 @@ const POSTS=[
   {d:"09.10.2024",img:"ya1",t:"Яндекс Станция Макс — умный помощник дома",p:"Объёмный звук, хаб Zigbee для умного дома и Алиса, которая всегда готова помочь.",n:29}
 ];
 
-/* подставляем фото */
 function setImg(el,key){ if(!IMG[key]) return; el.referrerPolicy="no-referrer"; el.decoding="async"; el.onerror=()=>{el.style.opacity=0}; el.src=IMG[key]; }
 document.querySelectorAll("img[data-img]").forEach(i=>setImg(i,i.dataset.img));
 
-/* журнал */
 const jr=document.getElementById("jr");
 jr.innerHTML=POSTS.map((p,i)=>`<a class="post rv" style="transition-delay:${i*.07}s" href="https://vk.com/club226143430?w=wall-226143430_${p.n}" target="_blank" rel="noopener">
   <div class="post__img ph"><img data-img="${p.img}" alt="" loading="lazy" draggable="false"><span class="post__date">${p.d}</span></div>
@@ -446,18 +420,15 @@ jr.querySelectorAll("img[data-img]").forEach(i=>setImg(i,i.dataset.img));
 const step=()=>jr.querySelector(".post").offsetWidth+20;
 document.getElementById("jrNext").onclick=()=>jr.scrollBy({left:step(),behavior:"smooth"});
 document.getElementById("jrPrev").onclick=()=>jr.scrollBy({left:-step(),behavior:"smooth"});
-/* перетаскивание мышью */
 let dx=null,sl=0,moved=false;
 jr.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;dx=e.clientX;sl=jr.scrollLeft;moved=false;jr.classList.add("drag")});
 addEventListener("pointermove",e=>{if(dx===null)return;const d=e.clientX-dx;if(Math.abs(d)>4)moved=true;jr.scrollLeft=sl-d});
 addEventListener("pointerup",()=>{dx=null;jr.classList.remove("drag")});
 jr.addEventListener("click",e=>{if(moved){e.preventDefault();moved=false}},true);
 
-/* бегущая строка */
 const words=["iPhone","AirPods","Dyson","PlayStation","Marshall","Яндекс Станция"];
 document.getElementById("marq").innerHTML=[...words,...words,...words,...words].map(w=>`<span>${w}</span>`).join("");
 
-/* заголовок по словам */
 const h=document.getElementById("heroTitle");
 let wi=0;
 h.innerHTML=h.innerHTML.split(/(<em>.*?<\/em>|\s+)/).filter(Boolean).map(part=>{
@@ -465,7 +436,6 @@ h.innerHTML=h.innerHTML.split(/(<em>.*?<\/em>|\s+)/).filter(Boolean).map(part=>{
   return `<span class="w"><span style="animation-delay:${(wi++)*.08+.15}s">${part}</span></span>`;
 }).join("");
 
-/* часы работы и статус (время Москвы) */
 function msk(){const p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Moscow",weekday:"short",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());const g=t=>p.find(x=>x.type===t).value;return{wd:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].indexOf(g("weekday")),m:+g("hour")*60+ +g("minute")}}
 const DAYS=["Понедельник","Вторник","Среда","Четверг","Пятница","Суббота","Воскресенье"];
 const open=d=>d<5?600:720, close=1260;
@@ -479,29 +449,24 @@ function status(){
 }
 status(); setInterval(status,60000);
 
-/* прелоадер: 2014 → текущий год */
 const pre=document.getElementById("pre"), yr=document.getElementById("yr"), now=new Date().getFullYear();
 let y=2014; const ti=setInterval(()=>{y++; yr.textContent=y; if(y>=now) clearInterval(ti)},55);
 addEventListener("load",()=>setTimeout(finish,250)); setTimeout(finish,2600);
 let finished=false;
 function finish(){ if(finished) return; finished=true; yr.textContent=now; pre.classList.add("done"); document.body.classList.add("ready"); }
 
-/* появление при прокрутке */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll(".rv,.rv-img,#care li").forEach(el=>io.observe(el));
 document.querySelectorAll("#care li").forEach((li,i)=>li.style.transitionDelay=i*.12+"s");
 
-/* шапка */
 const nav=document.getElementById("nav"); let ly=0;
 addEventListener("scroll",()=>{const s=scrollY; nav.classList.toggle("solid",s>40); nav.classList.toggle("hide",s>ly&&s>500); ly=s},{passive:true});
 
-/* закреплённый блок iPhone: шаги меняют фото */
 const steps=[...document.querySelectorAll(".step")], fimgs=[...document.querySelectorAll("#featMedia img")], fc=document.getElementById("featCount");
 const sio=new IntersectionObserver(es=>es.forEach(e=>{ if(!e.isIntersecting) return; const i=steps.indexOf(e.target);
   steps.forEach((s,j)=>s.classList.toggle("on",j===i)); fimgs.forEach((im,j)=>im.classList.toggle("on",j===i)); fc.textContent=String(i+1).padStart(2,"0")+" / 04"; }),{rootMargin:"-45% 0px -45% 0px"});
 steps.forEach(s=>sio.observe(s));
 
-/* каталог: фото следует за курсором */
 const cimg=document.getElementById("cimg");
 if(matchMedia("(hover:hover) and (min-width:981px)").matches){
   const keys=[...new Set([...document.querySelectorAll(".ci[data-img]")].map(c=>c.dataset.img))];
